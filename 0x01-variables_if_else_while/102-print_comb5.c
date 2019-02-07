@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
 /**
  * main - prints alphabet
@@ -8,7 +6,8 @@
 
 int main(void)
 {
-	int alphabet = 0, number = 0, total = 0, fnd = 0, snd = 0;
+	int alphabet = 0, number = 0, total = 0, fnd = 0, snd = 0, total3 = 0;
+	int total2 = 0;
 
 	while (fnd < 10)
 	{
@@ -18,33 +17,32 @@ int main(void)
 			{
 				while (number < 10)
 				{
-					if (snd < number && alphabet >= fnd)
+					if (total > total2)
 					{
 						putchar(fnd + '0');
 						putchar(snd + '0');
 						putchar(' ');
 						putchar(alphabet + '0');
 						putchar(number + '0');
-					if (total < 2474)
+					if (total3 < 4949)
 					{
 						putchar(',');
 						putchar(' ');
 					}
-					total++;
+					total3++;
 					}
 					number++;
+					total++;
 				}
 				alphabet++;
 				number = 0;
 			}
 			snd++;
-			alphabet = 0;
-			number = 0;
+			alphabet = number = total = 0;
+			total2++;
 		}
 		fnd++;
-		snd = 0;
-		alphabet = 0;
-		number = 0;
+		snd = alphabet = number = 0;
 	}
 		 putchar('\n');
 	return (0);
