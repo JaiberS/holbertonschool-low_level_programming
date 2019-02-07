@@ -25,7 +25,7 @@ int main(void)
 						putchar(' ');
 						putchar(alphabet + '0');
 						putchar(number + '0');
-					if (total < 4499)
+					if (total < 2474)
 					{
 						putchar(',');
 						putchar(' ');
