@@ -18,7 +18,7 @@ int main(void)
 			{
 				while (number < 10)
 				{
-					if (snd < number)
+					if (snd < number && alphabet >= fnd)
 					{
 						putchar(fnd + '0');
 						putchar(snd + '0');
