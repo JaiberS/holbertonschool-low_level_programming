@@ -17,7 +17,7 @@ int main(void)
 	{
 		while (number < 10)
 		{
-			while (rddigit <10)
+			while (rddigit < 10)
 			{
 				if (number < rddigit && alphabet < number)
 				{
