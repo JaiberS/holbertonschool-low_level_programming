@@ -1,9 +1,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-
-/* main - if random numbers
- *
+/**
+ * main - check random number
  * Return: always returns 0
 */
 
@@ -13,14 +12,17 @@ int main(void)
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	if(n==0){
-		printf("%i is zero\n",n);
+	if (n == 0)
+	{
+		printf("%i is zero\n", n);
 	}
-	if(n>0){
-	        printf("%i is positive\n",n);
+	if (n > 0)
+	{
+		printf("%i is positive\n", n);
 	}
-	if(n<0){
-	        printf("%i is negative\n",n);
+	if (n < 0)
+	{
+		printf("%i is negative\n", n);
 	}
 	return (0);
 }
