@@ -16,7 +16,7 @@ int main(void)
 	{
 		while (number < 10)
 		{
-			if(alphabet < number)
+			if (alphabet < number)
 			{
 				putchar(alphabet + '0');
 				putchar(number + '0');
