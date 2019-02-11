@@ -4,15 +4,16 @@
  * Return: always returns 0
 */
 
-int  _isalpha(int j)
+int _abs(int j)
 {
-	if (j>= 'a' && j<= 'z')
+	if (j >= 0)
 	{
-		return(1);
+		return(j);
 	}
-        else if (j>= 'A' && j<= 'Z')
+	else if (j < 0)
 	{
-		return(1);
+		j = -j;
+		return(j);
 	}
 	return(0);
 }

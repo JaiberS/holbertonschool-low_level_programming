@@ -4,7 +4,7 @@
  * Return: always returns 0
 */
 
-int  _islower(char j)
+int  _islower(int j)
 {
 	if (j>= 'a' && j<= 'z')
 	{
