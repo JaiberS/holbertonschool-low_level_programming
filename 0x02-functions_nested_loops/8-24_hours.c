@@ -1,13 +1,13 @@
 #include "holberton.h"
 /**
- * main - prind alphabet
- * Return: always returns 0
+ * jack_bauer - prints every minute of the day, starting from 00:00 to 23:59.
 */
 
 void jack_bauer(void)
 {
 	int j = 0, s = 0;
-	for (;j < 24;j++)
+
+	for (; j < 24; j++)
 	{
 		for (; s < 60; s++)
 		{
