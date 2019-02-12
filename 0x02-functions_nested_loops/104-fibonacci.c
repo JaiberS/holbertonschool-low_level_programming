@@ -7,6 +7,7 @@
 int main(void)
 {
 	float n = 1, j = n, s = 1, r = 0;
+
 	while (r < 97)
 	{
 		if (r != 96)
@@ -23,5 +24,5 @@ int main(void)
 		r++;
 	}
 	printf("\n");
-	return(0);
+	return (0);
 }
