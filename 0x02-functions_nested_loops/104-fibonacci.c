@@ -14,20 +14,21 @@ int main(void)
 	{
 		if (r <= 90)
 		{
-		printf("%lu, ", s);
-		s = n + j;
-		n = j;
-		j = s;
+			printf("%lu, ", s);
+			s = n + j;
+			n = j;
+			j = s;
 		}
 		else
 		{
 			if (m0)
 			{
-			a = s / 10000000000;
-			b = s % 10000000000;
-			m0 = 0;
-			c = n / 10000000000;
-			d = n % 10000000000;
+				printf("%lu, ", s);
+				a = s / 10000000000;
+				b = s % 10000000000;
+				m0 = 0;
+				c = n / 10000000000;
+				d = n % 10000000000;
 			}
 			f = (b + d);
 			g = f % 10000000000;
@@ -37,12 +38,11 @@ int main(void)
 			d = b;
 			a = e;
 			b = g;
-				if (r != 95)
-				{
-					printf("%lu%lu, ", e, g);
+			if (r != 95)
+				printf("%lu%lu, ", e, g);
+			else
+				printf("%lu%lu", a, b);
 		}
-				else
-					printf("%lu%lu", a, b);		}
 		r++;
 	}
 	printf("\n");
