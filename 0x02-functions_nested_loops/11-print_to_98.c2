@@ -1,0 +1,46 @@
+#include "holberton.h"
+/**
+ * main - prind alphabet
+ * Return: always returns 0
+*/
+
+void print_to_98(int n)
+{
+	int j=-n;
+	if(n==98)
+	{
+		_putchar(n + '0');
+	}
+	if(n<98)
+	{
+		if(n<0)
+		{
+			do{
+				_putchar('-');
+				while(j/10 !=0)
+				{
+					_putchar(j % 10 + '0');
+					j = j/10;
+				}
+				_putchar(j % 10 + '0');
+				_putchar(',');
+				_putchar(' ');
+				n++;
+				j=-n;
+			}while(n<0);
+		}
+		do{
+			while(j/10 !=0)
+			{
+				_putchar(j % 10 + '0');
+				j = j/10;
+			}
+			_putchar(j % 10 + '0');
+			_putchar(',');
+			_putchar(' ');
+			n++;
+			j=n;
+		}while(n<=98);
+	}
+	_putchar('\n');
+}
