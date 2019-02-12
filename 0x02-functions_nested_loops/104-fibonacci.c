@@ -10,7 +10,7 @@ int main(void)
 	int r = 0, m0 = 1;
 	unsigned long s = 1, n = 1, j = n, a, b, c, d, e, f, g, h;
 
-	while (r < 96)
+	while (r < 97)
 	{
 		if (r <= 90)
 		{
@@ -38,7 +38,7 @@ int main(void)
 			d = b;
 			a = e;
 			b = g;
-			if (r != 95)
+			if (r != 96)
 				printf("%lu%lu, ", e, g);
 			else
 				printf("%lu%lu", a, b);
