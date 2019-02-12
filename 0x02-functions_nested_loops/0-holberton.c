@@ -11,10 +11,10 @@
 int main(void)
 {
 	/*char Holb[11] = "Holberton";*/
-	char Holb[10] = {'H','o','l','b','e','r','t','o','n','\n'};
+	char Holb[10] = {'H', 'o', 'l', 'b', 'e', 'r', 't', 'o', 'n', '\n'};
 	int i = 0;
 
-	for(;i<=9;i++)
+	for (; i <= 9; i++)
 	{
 		_putchar(Holb[i]);
 	}
