@@ -1,18 +1,20 @@
 #include "holberton.h"
 /**
- * main - prind alphabet
- * Return: always returns 0
+ * _islower - check if the letter is lowercase
+ *@j: letter to be checked
+ *
+ * Return: 1 true 0 fales
 */
 
 int  _islower(int j)
 {
-	if (j>= 'a' && j<= 'z')
+	if (j >= 'a' && j <= 'z')
 	{
-		return(1);
+		return (1);
 	}
-        else if (j>= 'A' && j<= 'Z')
+	else if (j >= 'A' && j <= 'Z')
 	{
-		return(0);
+		return (0);
 	}
-	return(0);
+	return (0);
 }
