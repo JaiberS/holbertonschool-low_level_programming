@@ -6,20 +6,20 @@
 
 int main(void)
 {
-	unsigned long n=1,j=n,s=1,r=0;
-	while(r<98)
+	float n = 1, j = n, s = 1, r = 0;
+	while (r < 97)
 	{
-		if(r!=97)
+		if (r != 96)
 		{
-		printf("%lu, ",s);
+		printf("%.0f, ", s);
 		}
 		else
 		{
-			printf("%lu",s);
+			printf("%.0f", s);
 		}
-		s=n+j;
-		n=j;
-		j=s;
+		s = n + j;
+		n = j;
+		j = s;
 		r++;
 	}
 	printf("\n");
