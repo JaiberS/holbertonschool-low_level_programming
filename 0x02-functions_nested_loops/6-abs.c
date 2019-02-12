@@ -1,19 +1,21 @@
 #include "holberton.h"
 /**
- * main - prind alphabet
- * Return: always returns 0
+ * _abs -  computes the absolute value of an integer.
+ * @j: The integer.
+ *
+ * Return: absolute value of the integer.
 */
 
 int _abs(int j)
 {
 	if (j >= 0)
 	{
-		return(j);
+		return (j);
 	}
 	else if (j < 0)
 	{
 		j = -j;
-		return(j);
+		return (j);
 	}
-	return(0);
+	return (0);
 }
