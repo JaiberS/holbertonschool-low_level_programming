@@ -6,18 +6,19 @@
 
 int main(void)
 {
-	long n=1,j=n,s=1,r=0;
-	while(s<4000000)
+	long n = 1, j = n, s = 1, r = 0;
+
+	while (s < 4000000)
 	{
-		s=n+j;
-		n=j;
-		j=s;
-		if(s % 2 == 0)
+		s = n + j;
+		n = j;
+		j = s;
+		if (s % 2 == 0)
 		{
-			r=r+s;
+			r = r + s;
 		}
 	}
-	printf("%li",r);
+	printf("%li", r);
 	printf("\n");
-	return(0);
+	return (0);
 }
