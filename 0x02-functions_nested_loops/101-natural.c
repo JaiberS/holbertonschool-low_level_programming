@@ -1,4 +1,4 @@
-C#include <stdio.h>
+#include <stdio.h>
 /**
  * main - prind alphabet
  * Return: always returns 0
