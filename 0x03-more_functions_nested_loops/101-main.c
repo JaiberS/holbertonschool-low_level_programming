@@ -9,9 +9,9 @@ int main(void)
 {
 	print_number(98);
 	_putchar('\n');
-	print_number(-2147483648);
+	print_number(-32000);
 	_putchar('\n');
-	print_number(0);
+	print_number(32000);
 	_putchar('\n');
 	print_number(0);
 	_putchar('\n');

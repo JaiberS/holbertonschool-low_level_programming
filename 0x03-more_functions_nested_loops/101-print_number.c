@@ -1,4 +1,4 @@
-B#include "holberton.h"
+#include "holberton.h"
 #include <stdio.h>
 /**
  * print_number -  prints n integer number
@@ -20,7 +20,6 @@ void print_number(int n)
 		i++;
 		j = j / 10;
 	}
-	printf("\n%i\n",n);
 	for (; i > 0; i--)
 	{
 		times = 10;
