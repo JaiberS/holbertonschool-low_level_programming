@@ -5,9 +5,9 @@
 
 int main(void)
 {
-	unsigned long j = 612852475143, i = 2, a = 2, m0 = 0, b = 1;
+	long j = 612852475143, i = 2, a = 2, m0 = 0, b = 1, j2 = j;
 
-	while (b < 612852475143)
+	while (b < j2)
 	{
 		m0 = 0;
 		for (i = 2; i < a; i++)
@@ -21,7 +21,6 @@ int main(void)
 		{
 			while (j % a == 0)
 			{
-				printf("%lu\n",j);
 				j = j / a;
 				b =  b * a;
 				printf("%lu\n",a);
