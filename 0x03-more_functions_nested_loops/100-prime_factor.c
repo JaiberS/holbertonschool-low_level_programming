@@ -7,17 +7,15 @@
 
 int main(void)
 {
-	long j = 612852475143, i = 2, a = 2, m0 = 0, b = 1, j2 = j;
+	long j = 1231952  , i = 2, a = 2, m0 = 0, b = 1;
 
-	while (b <  j2)
+	while (j != 1)
 	{
 		m0 = 0;
 		for (i = 2; i < a; i++)
 		{
 			if (a % i == 0)
-			{
 				m0 = 1;
-			}
 		}
 		if (m0 == 0)
 		{
@@ -29,7 +27,6 @@ int main(void)
 		}
 		a++;
 	}
-	a = a - 1;
 	printf("%lu\n", a);
 	return (0);
 }

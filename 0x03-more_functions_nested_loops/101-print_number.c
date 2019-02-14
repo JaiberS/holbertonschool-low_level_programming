@@ -7,10 +7,13 @@
 
 void print_number(int n)
 {
-	int i = 0, j, times, a;
+	int i = 0, j, times, a, m0 = 0;
 
-	if (n == -2,147,483,648)
-		n = n+1;
+	if (n == -2147483648)
+	{
+		n = n / 10;
+		m0 = 1;
+	}
 	if (n < 0)
 	{
 		_putchar('-');
@@ -30,4 +33,6 @@ void print_number(int n)
 		_putchar(((n / times) % 10) + '0');
 	}
 	_putchar((n % 10) + '0');
+	if (m0 == 1)
+		_putchar('8');
 }
