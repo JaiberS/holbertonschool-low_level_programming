@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * _ismul -  multiplies two integers
+ * mul -  multiplies two integers
  *@a: a times b
  *@b: a times b
  *

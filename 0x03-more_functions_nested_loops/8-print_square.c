@@ -1,10 +1,8 @@
 #include "holberton.h"
 /**
- * _ismul -  multiplies two integers
- *@a: a times b
- *@b: a times b
+ * print_square - print a square of # of size size
+ *@size: size of the square
  *
- * Return: the result
 */
 
 void print_square(int size)
@@ -13,12 +11,12 @@ void print_square(int size)
 
 	for (i = 1; i <= size; i++)
 	{
-		for(j = 1; j <= size; j++)
+		for (j = 1; j <= size; j++)
 		{
 			_putchar('#');
 		}
 		_putchar('\n');
 	}
-	if(size <= 0)
+	if (size <= 0)
 		_putchar('\n');
 }

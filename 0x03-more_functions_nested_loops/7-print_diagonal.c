@@ -1,10 +1,7 @@
 #include "holberton.h"
 /**
- * _ismul -  multiplies two integers
- *@a: a times b
- *@b: a times b
- *
- * Return: the result
+ * print_diagonal - prints n number of diagonals
+ *@n: number of diagonals
 */
 
 void print_diagonal(int n)
@@ -14,7 +11,7 @@ void print_diagonal(int n)
 	for (i = 1; i <= n; i++)
 	{
 		j = 1;
-		while(j < i)
+		while (j < i)
 		{
 			_putchar(' ');
 			j++;
@@ -22,6 +19,6 @@ void print_diagonal(int n)
 		_putchar('\\');
 		_putchar('\n');
 	}
-	if(n <= 0)
+	if (n <= 0)
 		_putchar('\n');
 }

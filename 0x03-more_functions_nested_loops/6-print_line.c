@@ -1,17 +1,15 @@
 #include "holberton.h"
 /**
- * _ismul -  multiplies two integers
- *@a: a times b
- *@b: a times b
+ * print_line - print n lines
+ *@n: number of lines
  *
- * Return: the result
 */
 
 void print_line(int n)
 {
 	int i;
 
-		for (i = 0; i <n; i++)
+		for (i = 0; i < n; i++)
 		{
 			_putchar('_');
 		}
