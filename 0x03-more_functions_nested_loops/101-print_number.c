@@ -9,6 +9,8 @@ void print_number(int n)
 {
 	int i = 0, j, times, a;
 
+	if (n == -2,147,483,648)
+		n = n+1;
 	if (n < 0)
 	{
 		_putchar('-');
