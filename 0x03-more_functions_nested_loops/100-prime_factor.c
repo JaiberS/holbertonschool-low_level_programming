@@ -7,7 +7,7 @@
 
 int main(void)
 {
-	long j = 1231952, i = 2, a = 2, m0 = 0, b = 1, j2 = j;
+	long j = 612852475143, i = 2, a = 2, m0 = 0, b = 1, j2 = j;
 
 	while (b <  j2)
 	{
