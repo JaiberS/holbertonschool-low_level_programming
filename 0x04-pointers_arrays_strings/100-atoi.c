@@ -27,41 +27,10 @@ int _atoi(char *s)
 		}
 		if (m1 == 1)
 		{
-			switch(s[i]) {
-			case '0' :
-				r =  r * 10;
-				break;
-			case '1' :
-				r = (r * 10) + s[i];
-				break;
-			case '2' :
-				r = (r * 10) + 2;
-				break;
-			case '3' :
-				r = (r * 10) + 3;
-				break;
-			case '4' :
-				r = (r * 10) + 4;
-				break;
-			case '5' :
-				r = (r * 10) + 5;
-				break;
-			case '6' :
-				r = (r * 10) + 6;
-				break;
-			case '7' :
-				r = (r * 10) + 7;
-				break;
-			case '8' :
-				r = (r * 10) + 8;
-				break;
-			case '9' :
-				r = (r * 10) + 9;
-				break;
-			case '-':
+			if (s[i] >= '0' && s[i] <= '9')
+				r = (r * 10) + (s[i] - 48);
+			if (s[i] == '-')
 				j++;
-				break;
-			}
 			if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z'))
 				m1 = 0;
 		}
