@@ -32,7 +32,7 @@ int _atoi(char *s)
 				r =  r * 10;
 				break;
 			case '1' :
-				r = (r * 10) + 1;
+				r = (r * 10) + s[i];
 				break;
 			case '2' :
 				r = (r * 10) + 2;
