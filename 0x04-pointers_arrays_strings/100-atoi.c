@@ -11,7 +11,8 @@
 
 int _atoi(char *s)
 {
-	int i = 0, m0 = 1, m1 = 0, j = 0, r = 0;
+	int i = 0, m0 = 1, m1 = 0, j = 0, o = 0;
+	unsigned int r = 0;
 
 	while (s[i] != 0)
 	{
@@ -27,7 +28,7 @@ int _atoi(char *s)
 		}
 		if (m1 == 1)
 		{
-			if (s[i] >= '0' && s[i] <= '9' && s[i] + r <= 2147483647)
+			if (s[i] >= '0' && s[i] <= '9')
 				r = (r * 10) + (s[i] - 48);
 			if (s[i] == '-')
 				j++;
@@ -37,8 +38,8 @@ int _atoi(char *s)
 		i++;
 	}
 	if (j % 2 != 0)
-		r = r * -1;
-	if ((r - s[i - 1]) == -2147483648)
-		r = -2147483648;
-	return (r);
+		o = r * -1;
+	else
+		o = r;
+	return (o);
 }
