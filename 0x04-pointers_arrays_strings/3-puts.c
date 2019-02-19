@@ -1,10 +1,9 @@
 #include "holberton.h"
 
 /**
- * _strlen - checks the lenght of the string value
- * @s: Value to be checked
+ * _puts - prints the string array
+ * @str: array to print
  *
- * Return: lenght of the string value
  */
 
 void _puts(char *str)
