@@ -2,10 +2,11 @@
 #include <stdio.h>
 
 /**
- * print_array - prints n elements of string array
- * @a: string to print
- * @n: n elements
+ * _strcpy - copies string
+ * @dest: variable to copy the string
+ * @src: the string
  *
+ * Return: The string
  */
 
 char *_strcpy(char *dest, char *src)
@@ -17,6 +18,6 @@ char *_strcpy(char *dest, char *src)
 		dest[i] = src[i];
 		i++;
 	}
-	dest[i + 1] = src [i + 1];
+	dest[i + 1] = src[i + 1];
 	return (src);
 }
