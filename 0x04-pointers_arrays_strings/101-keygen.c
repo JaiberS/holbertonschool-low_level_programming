@@ -17,9 +17,9 @@ int main(void)
 	while (j <= 2772 - r)
 	{
 		j = s + j;
-		_putchar(s);
+		putchar(s);
 	}
 	s = 2772 - j;
-	_putchar(s);
+	putchar(s);
 	return (0);
 }
