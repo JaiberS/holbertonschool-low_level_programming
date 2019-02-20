@@ -10,16 +10,16 @@
 
 int main(void)
 {
-	int j = 0, s, r = 127;
+	int j = 0, s, r = 128;
 
 	srand(time(NULL));
 	s = rand() % r;
 	while (j <= 2772 - r)
 	{
 		j = s + j;
-		putchar(s);
+		_putchar(s);
 	}
 	s = 2772 - j;
-	putchar(s);
+	_putchar(s);
 	return (0);
 }
