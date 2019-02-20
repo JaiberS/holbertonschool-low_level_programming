@@ -13,9 +13,9 @@ int main(void)
 	int j = 0, s, r = 128;
 
 	srand(time(NULL));
-	s = rand() % r;
 	while (j <= 2772 - r)
 	{
+		s = rand() % r;
 		j = s + j;
 		_putchar(s);
 	}
