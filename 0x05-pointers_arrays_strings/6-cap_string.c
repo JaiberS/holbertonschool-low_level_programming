@@ -17,7 +17,9 @@ char *cap_string(char *jaiber)
 	for (; jaiber[i] != '\0' ; i++)
 	{
 		j = 0;
-		for (; santi[j] != '\0'; j++)
+		if (jaiber[0] >= 97 && jaiber[0] <=122)
+			jaiber[0] = jaiber[0] - 32;
+ 		for (; santi[j] != '\0'; j++)
 		{
 			if (jaiber[i] == santi[j] && jaiber[i + 1] >= 97 && jaiber[i + 1] <= 122)
 			{
