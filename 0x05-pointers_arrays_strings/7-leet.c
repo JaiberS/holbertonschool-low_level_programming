@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * string_toupper - changes lowercase to uppercase
+ * leet - encondes in 1337 format
  *@jaiber: the string to change.
  *
  * Return: the string changed.
