@@ -5,7 +5,7 @@
 /**
  * _strcmp -  compares two strings.
  *@s1: first string to compare
- *@s1: second string to compare
+ *@s2: second string to compare
  *
  * Return: the comparation of the strings
  */
