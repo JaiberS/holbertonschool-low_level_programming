@@ -1,7 +1,3 @@
-#include "holberton.h"
-#include <stdio.h>
-#include <stdlib.h>
-
 /**
  * reverse_array - inverts the values of an array
  *@a: array to be reversed
