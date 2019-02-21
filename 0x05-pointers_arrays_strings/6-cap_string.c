@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * rot13 - encondes in rot13 format
+ * cap_string - Capitalize all words
  *@jaiber: the string to change.
  *
  * Return: the string changed.
@@ -12,7 +12,7 @@
 char *cap_string(char *jaiber)
 {
 	int i = 0, j = 0;
-	char santi[] = {'\t','\n',' ',',',';','.','!','?','"','(',')','{','}'};
+	char santi[] = {" ,;.!?\"(){}\t\n"};
 
 	for (; jaiber[i] != '\0' ; i++)
 	{
