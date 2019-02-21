@@ -1,3 +1,4 @@
+#include <stdio.h>
 /**
  * reverse_array - inverts the values of an array
  *@a: array to be reversed
@@ -7,13 +8,14 @@
 
 void reverse_array(int *a, int n)
 {
-	int j[99999999999], i = 0, s = 0;
+	int i = 0, j;
 
-	for (; s != n; s++)
-		j[s] = a[s];
-	for (; n >= 0; n--)
+	n = n - 1;
+	for (; n >= i; n--)
 	{
-		a[i] = j[n - 1];
+		j = a[i];
+		a[i] = a[n];
+		a[n] = j;
 		i++;
 	}
 }
