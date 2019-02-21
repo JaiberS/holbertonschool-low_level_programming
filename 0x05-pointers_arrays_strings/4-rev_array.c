@@ -3,11 +3,10 @@
 #include <stdlib.h>
 
 /**
- * _strcat -  function that concatenates two strings.
- *@dest: string to add the src string.
- *@src: string to be added to the dest string.
+ * reverse_array - inverts the values of an array
+ *@a: array to be reversed
+ *@n: number of elements of the array
  *
- * Return: pointer to the resulting string dest.
  */
 
 void reverse_array(int *a, int n)
