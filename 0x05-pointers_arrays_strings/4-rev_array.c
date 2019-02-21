@@ -7,7 +7,7 @@
 
 void reverse_array(int *a, int n)
 {
-	int j[999], i = 0, s = 0;
+	int j[99999999999], i = 0, s = 0;
 
 	for (; s != n; s++)
 		j[s] = a[s];
