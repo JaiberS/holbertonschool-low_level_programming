@@ -3,9 +3,10 @@
 #include <stdlib.h>
 
 /**
- * _strcat -  function that concatenates two strings.
+ * _strncat -  function that concatenates two strings until n.
  *@dest: string to add the src string.
  *@src: string to be added to the dest string.
+ *@n: Limit of the string to be printed
  *
  * Return: pointer to the resulting string dest.
  */
