@@ -7,3 +7,4 @@ char *string_toupper(char *);
 int _putchar(char c);
 char *leet(char *);
 char *rot13(char *);
+char *cap_string(char *);
