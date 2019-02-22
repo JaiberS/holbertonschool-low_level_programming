@@ -12,7 +12,6 @@ void print_buffer(char *b, int size)
 	int i = 0, j = 0, k = 0, r = 0;
 
 	b[0]=b[0];
-	printf("%i\n", size);
 	while (i < size && k < size)
 	{
 		printf("%08x: ", k);
