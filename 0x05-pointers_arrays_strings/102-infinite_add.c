@@ -20,26 +20,38 @@ void reverse_array(char *a, int n)
 	}
 }
 
-/*
- *int last_add(char *n, int carry, int *k, int counter, char *r)
- *{
- *	for (; counter >= 0; counter--)
- *	{
- *		if( ((n[counter]-48) + carry) + 48 >= 58)
- *		{
- *			r[k] = ((n[counter] - '0') + carry) + 48 - 10;
- *			carry = 1;
- *		}
+/**
+ * last_add - add the remaining carry
+ * @n: array with the string
+ * @carry: remining carry
+ * @k: counter for r array
+ * @counter: remaining times to add the n
+ * @r: array to get the result
  *
- *		else
- *		{
- *			r[k] = ((n[counter]- '0') + carry) + 48;
- *			carry = 0;
- *		}
- *	}
- *	return (carry);
- *	}
+ * Return: remaining carry
  */
+
+int last_add(char *n, int carry, int *k, int counter, char *r)
+{
+	int i = *k;
+
+	for (; counter >= 0; counter--, i++)
+	{
+		if (((n[counter] - 48) + carry) + 48 >= 58)
+		{
+			*(r + i) = ((n[counter] - 48) + carry) + 48 - 10;
+			carry = 1;
+		}
+		else
+		{
+			*(r + i) = ((n[counter] - 48) + carry) + 48;
+			carry = 0;
+		}
+	}
+	*k = i;
+	return (carry);
+}
+
 
 /**
  * infinite_add - adds infinite size numbers
@@ -53,7 +65,7 @@ void reverse_array(char *a, int n)
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int i = 0, j = 0, k = 0, carry = 0;
+	int i = 0, j = 0, k = 0, carry = 0, *k2 = &k;
 
 	for (; n1[i] != 0; i++)
 		;
@@ -79,35 +91,11 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	}
 	if (j >= 0)
 	{
-		for (; j >= 0; j--, k++)
-		{
-			if (((n2[j] - 48) + carry) + 48 >= 58)
-			{
-				r[k] = ((n2[j] - 48) + carry) + 48 - 10;
-				carry = 1;
-			}
-			else
-			{
-				r[k] = ((n2[j] - 48) + carry) + 48;
-				carry = 0;
-			}
-		}
+		last_add(n2, carry, k2, j, r);
 	}
 	if (i >= 0)
 	{
-		for (; i >= 0; i--, k++)
-		{
-			if (((n1[i] - 48) + carry) + 48 >= 58)
-			{
-				r[k] = ((n1[i] - 48) + carry) + 48 - 10;
-				carry = 1;
-			}
-			else
-			{
-				r[k] = ((n1[i] - 48) + carry) + 48;
-				carry = 0;
-			}
-		}
+		last_add(n1, carry, k2, i, r);
 	}
 	if (carry == 1)
 	{

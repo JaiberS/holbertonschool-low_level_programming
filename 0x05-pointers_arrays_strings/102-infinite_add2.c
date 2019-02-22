@@ -20,26 +20,25 @@ void reverse_array(char *a, int n)
 	}
 }
 
-/*
- *int last_add(char *n, int carry, int *k, int counter, char *r)
- *{
- *	for (; counter >= 0; counter--)
- *	{
- *		if( ((n[counter]-48) + carry) + 48 >= 58)
- *		{
- *			r[k] = ((n[counter] - '0') + carry) + 48 - 10;
- *			carry = 1;
- *		}
- *
- *		else
- *		{
- *			r[k] = ((n[counter]- '0') + carry) + 48;
- *			carry = 0;
- *		}
- *	}
- *	return (carry);
- *	}
- */
+
+int last_add(char *n, int carry, int *k, int counter, char *r)
+{
+	for (; counter >= 0; counter--)
+	{
+		if( ((n[counter]-48) + carry) + 48 >= 58)
+		{
+			r[k] = ((n[counter] - '0') + carry) + 48 - 10;
+			carry = 1;
+		}
+		else
+		{
+			r[k] = ((n[counter]- '0') + carry) + 48;
+			carry = 0;
+		}
+	}
+	return (carry);
+}
+
 
 /**
  * infinite_add - adds infinite size numbers
