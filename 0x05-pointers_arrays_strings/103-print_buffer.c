@@ -1,0 +1,39 @@
+#include "holberton.h"
+#include <stdio.h>
+/**
+ * print_buffer -  prints size buffer
+ * @n: buffer size
+ *@b: buffer to print
+ *
+*/
+
+void print_buffer(char *b, int size)
+{
+	int i = 0, j = 0, k = 0, r = 0;
+
+	b[0]=b[0];
+	printf("%i\n", size);
+	while (i < size && k < size)
+	{
+		printf("%08x: ", k);
+		for (j = 0; j < 10; j++, r++)
+		{
+			if (r < size)
+				printf("%02x", b[r]);
+			else
+				printf("  ");
+			if (j % 2 != 0)
+				printf(" ");
+				}
+		for (j = 0; j < 10 && k < size; j++, k++)
+		{
+			if(b[k] >= 32 && b[k] <= 126)
+				printf("%c", b[k]);
+			else
+				printf(".");
+
+		}
+		printf("\n");
+		i++;
+	}
+}
