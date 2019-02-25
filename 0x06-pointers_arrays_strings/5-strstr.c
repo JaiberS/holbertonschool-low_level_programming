@@ -2,12 +2,11 @@
 #include <stdio.h>
 
 /**
- * _memset -  fills memory with a constant byte
- * @s: memory to be filled
- * @b: constant byte
- * @n: until n
+ * _strstr - locates a substring
+ * @haystack: string to check the ocurrence
+ * @needle:  first occurrence of the substring
  *
- *Return: Returns a pointer to the memory area s
+ *Return: first occurrence of the substring
  */
 
 char *_strstr(char *haystack, char *needle)
@@ -15,7 +14,7 @@ char *_strstr(char *haystack, char *needle)
 	unsigned int i = 0, m0 = 0, k = 0;
 	char **s2 = &haystack;
 
-	for (;haystack[i]; i++)
+	for (; haystack[i]; i++)
 	{
 		while (haystack[i] == needle[k])
 		{
