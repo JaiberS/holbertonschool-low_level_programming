@@ -2,11 +2,11 @@
 #include <stdio.h>
 
 /**
- * _strspn -  gets the length of a prefix substring
+ * _strpbrk - searches a string for any of a set of bytes.
  * @s:  initial segment
  * @accept: bytes
  *
- *Return: length of a prefix substring.
+ *Return: string of the bytes.
  */
 
 char *_strpbrk(char *s, char *accept)
