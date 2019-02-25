@@ -2,12 +2,10 @@
 #include <stdio.h>
 
 /**
- * _memset -  fills memory with a constant byte
- * @s: memory to be filled
- * @b: constant byte
- * @n: until n
+ * print_diagsums - adds the diags of the array
+ * @a: the array
+ * @size: the size of the array
  *
- *Return: Returns a pointer to the memory area s
  */
 
 void print_diagsums(int *a, int size)
@@ -25,5 +23,5 @@ void print_diagsums(int *a, int size)
 			k++;
 		}
 	}
-	printf("%i, %i\n", i2,j2);
+	printf("%i, %i\n", i2, j2);
 }
