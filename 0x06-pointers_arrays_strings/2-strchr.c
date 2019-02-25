@@ -12,23 +12,19 @@
 
 char *_strchr(char *s, char c)
 {
-	unsigned int i = 0, m0 = 0;
-	char **s2 = &s;
+	unsigned int m0 = 0;
 
-	for (; s[i]; i++)
+	for (; m0 == 0; s++)
 	{
-		if (s[i] == c)
-		{
-			*s2 = (s + i);
+		if (*s == c)
 			break;
-		}
-		if (s[i + 1] == '\0')
+		if (*s == '\0')
 		{
 			m0 = 1;
 			break;
 		}
 	}
 	if (m0 == 0)
-		return (*s2);
+		return (s);
 	return (0);
 }
