@@ -30,6 +30,5 @@ char *_strchr(char *s, char c)
 	}
 	if (m0 == 0)
 		return (*s2);
-	*s2 = (s + i);
-	return (*s2);
+	return (0);
 }
