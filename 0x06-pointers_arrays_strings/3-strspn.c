@@ -2,37 +2,31 @@
 #include <stdio.h>
 
 /**
- * _memset -  fills memory with a constant byte
- * @s: memory to be filled
- * @b: constant byte
- * @n: until n
+ * _strspn -  gets the length of a prefix substring
+ * @s:  initial segment
+ * @accept: bytes
  *
- *Return: Returns a pointer to the memory area s
+ *Return: length of a prefix substring.
  */
 
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int i = 0, m0 = 0;
-	char **s2 = &s;
+	unsigned int i = 0, j = 0, m0 = 0, k = 0;
 
-	for (;s[i]; i++)
+	for (; s[i]; i++)
 	{
-		if (s[i] == c)
+		for (j = 0; accept[j]; j++)
 		{
-			*s2 = (s + i);
-			break;
+			if (s[i] == accept[j])
+			{
+				k++;
+				break;
+			}
+			if (accept[j + 1] == '\0')
+				m0 = 1;
 		}
-		if (s[i + 1]== '\0')
-		{
-			m0 = 1;
-			break;
-		}
+		if (m0 == 1)
+			return (k);
 	}
-	if (m0 == 0)
-		return (*s2);
-	else
-	{
-		*s2 = (s + i);
-		return (*s2);
-	}
+	return (k);
 }
