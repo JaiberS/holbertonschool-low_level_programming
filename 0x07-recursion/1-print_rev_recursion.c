@@ -28,14 +28,14 @@ int count_string(char *s, int i)
 
 void prints(char *s, int j)
 {
-	if (s[j] != '\n')
+	if (s[j] != s[0])
 	{
 		_putchar(s[j]);
 		j--;
 		prints(s, j);
 	}
 	else
-		_putchar('\n');
+		_putchar(s[0]);
 }
 /**
  * _print_rev_recursion - prints a string in reverse, followed by a new line.
