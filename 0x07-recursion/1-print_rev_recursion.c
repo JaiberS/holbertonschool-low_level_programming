@@ -46,6 +46,6 @@ void prints(char *s, int j)
 void _print_rev_recursion(char *s)
 {
 	int j = count_string(s, 0);
-
-	prints(s, j - 1);
+	if (s[0] != '\0')
+		prints(s, j - 1);
 }
