@@ -28,13 +28,13 @@ int count_string(char *s, int i)
 
 void prints(char *s, int j)
 {
-	if (s[j] != s[0])
+	if (s[j] != s[0] && s[0] != '\0')
 	{
 		_putchar(s[j]);
 		j--;
 		prints(s, j);
 	}
-	else
+	else if (s != '\0')
 		_putchar(s[0]);
 }
 /**
