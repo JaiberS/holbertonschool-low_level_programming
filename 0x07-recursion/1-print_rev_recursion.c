@@ -47,5 +47,5 @@ void _print_rev_recursion(char *s)
 {
 	int j = count_string(s, 0);
 
-	prints(s, j);
+	prints(s, j - 1);
 }
