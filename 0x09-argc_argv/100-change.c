@@ -19,33 +19,30 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	i = atoi(argv[1]);
-	while (i > 0)
+	if (i >= 25 && i > 0)
 	{
-		if (i % 25 == 0)
-		{
-			i = i - 25;
-			j++;
-		}
-		else if (i % 10 == 0)
-		{
-			i = i - 10;
-			j++;
-		}
-		else if (i % 5 == 0)
-		{
-			i = i - 5;
-			j++;
-		}
-		else if (i % 2 == 0)
-		{
-			i = i - 2;
-			j++;
-		}
-		else if (i % 1 == 0)
-		{
-			i = i - 1;
-			j++;
-		}
+		j += i / 25;
+		i = i % 25;
+	}
+	if (i >= 10 && i > 0)
+	{
+		j += i / 10;
+		i = i % 10;
+	}
+	if (i >= 5 && i > 0)
+	{
+		j += i / 5;
+		i = i % 5;
+	}
+	if (i >= 2 && i > 0)
+	{
+		j += i / 2;
+		i = i % 2;
+	}
+	if (i >= 1 && i > 0)
+	{
+		j += i;
+		i = i - 1;
 	}
 	printf("%i\n", j);
 	return (0);
