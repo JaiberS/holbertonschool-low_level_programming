@@ -1,6 +1,14 @@
 #include <stdio.h>
 
-int main (int argc, char *argv[])
+/**
+ * main - test argv
+ * @argc: counter of the inputs
+ * @argv: the inputs in string
+ *
+ * Return: always 0
+ */
+
+int main(int argc, char *argv[])
 {
 	int i;
 
