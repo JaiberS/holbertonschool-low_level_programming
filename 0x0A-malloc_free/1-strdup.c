@@ -2,6 +2,7 @@
 
 /**
  * _strdup - returns a pointer to a newly allocated space in memory
+ *@str: string to be copied
  *
  * Return: pointer to a new string, NULL if str = NULL
  */
