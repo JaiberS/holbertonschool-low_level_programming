@@ -10,8 +10,6 @@ void free_grid(int **grid, int height)
 {
 	int i = 0, *currentgrid;
 
-	if (height == 0 || grid == NULL)
-		return;
 	for (; i < height; i++)
 	{
 		currentgrid = grid[i];
