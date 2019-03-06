@@ -6,7 +6,7 @@
  * @height: rows of the grid
  *
  */
-void free_grid(int **grid, int height)
+void free_grd(int **grid, int height)
 {
 	int i = 0;
 
@@ -36,7 +36,7 @@ int **alloc_grid(int width, int height)
 		p[i] = malloc(sizeof(int) * width);
 		if (p[i] == NULL)
 		{
-			free_grid(p, i);
+			free_grd(p, i);
 			return (0);
 		}
 	}
