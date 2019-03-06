@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * free_grid - free the grid provided
+ * free_g - free the grid provided
  * @grid: grid to be freed
  * @height: rows of the grid
  *
