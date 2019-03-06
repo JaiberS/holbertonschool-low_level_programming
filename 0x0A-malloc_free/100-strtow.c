@@ -1,6 +1,21 @@
 #include "holberton.h"
 
 /**
+ * free_grid - free the grid provided
+ * @grid: grid to be freed
+ * @height: rows of the grid
+ *
+ */
+void free_g(char **grid, int height)
+{
+	int i = 0;
+
+	for (; i < height; i++)
+		free(grid[i]);
+	free(grid);
+}
+
+/**
  * countwords - count the amount of words
  * @str: the strings to count the words
  *
@@ -50,8 +65,9 @@ int sizecolumns(char *str, char **p)
 		if ((str[i] == ' ' || str[i] == '\t') && m1 == 1)
 		{
 			p[j] = malloc(sizeof(char) * (k + 1));
-			if (p == NULL)
+			if (p[j] == NULL)
 			{
+				free_g(p, j);
 				return (0);
 			}
 			m1 = 0;
@@ -77,7 +93,7 @@ char **strtow(char *str)
 	if (str == NULL || str == '\0')
 		return (0);
 	k = countwords(str);
-	p = malloc(sizeof(char *) * k);
+	p = malloc(sizeof(char *) * (k + 1));
 	if (p == NULL)
 		return (0);
 	checkr = sizecolumns(str, p);
