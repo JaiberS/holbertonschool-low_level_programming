@@ -33,6 +33,7 @@ int countwords(char *str)
  * @str: principal string
  * @p: string to be added the size
  *
+ * Return: 0 if fails
  */
 
 int sizecolumns(char *str, char **p)
@@ -51,7 +52,7 @@ int sizecolumns(char *str, char **p)
 			p[j] = malloc(sizeof(char) * (k + 1));
 			if (p == NULL)
 			{
-                                return (0);
+				return (0);
 			}
 			m1 = 0;
 			j++;
@@ -76,7 +77,7 @@ char **strtow(char *str)
 	if (str == NULL || str == '\0')
 		return (0);
 	k = countwords(str);
-	p = malloc(sizeof(char *) * 3);
+	p = malloc(sizeof(char *) * k);
 	if (p == NULL)
 		return (0);
 	checkr = sizecolumns(str, p);
