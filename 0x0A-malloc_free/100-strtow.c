@@ -13,13 +13,13 @@ int countwords(char *str)
 
 	for (; str[i] != '\0'; i++)
 	{
-		if (str[i] != ' ' && m0 == 1)
+		if (str[i] != ' ' && str[i] != '\t' && m0 == 1)
 		{
 			m1 = 1;
 			m0 = 0;
 			k++;
 		}
-		if (str[i] == ' ' && m1 == 1)
+		if ((str[i] == ' ' || str[i] == '\t') && m1 == 1)
 		{
 			m1 = 0;
 			m0 = 1;
@@ -42,12 +42,12 @@ int sizecolumns(char *str, char **p)
 
 	for (i = 0, k = 0, j = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] != ' ')
+		if (str[i] != ' ' && str[i] != '\t')
 		{
 			m1 = 1;
 			k++;
 		}
-		if (str[i] == ' ' && m1 == 1)
+		if ((str[i] == ' ' || str[i] == '\t') && m1 == 1)
 		{
 			p[j] = malloc(sizeof(char) * (k + 1));
 			if (p == NULL)
@@ -85,13 +85,13 @@ char **strtow(char *str)
 		return (0);
 	for (i = 0, k = 0, j = 0, m1 = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] != ' ')
+		if (str[i] != ' ' && str[i] != '\t')
 		{
 			m1 = 1;
 			p[j][k] = str[i];
 			k++;
 		}
-		if (str[i] == ' ' && m1 == 1)
+		if ((str[i] == ' ' || str[i] == '\t') && m1 == 1)
 		{
 			m1 = 0;
 			p[j][k] = '\0';
