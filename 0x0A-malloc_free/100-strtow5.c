@@ -75,15 +75,6 @@ int sizecolumns(char *str, char **p)
 			k = 0;
 		}
 	}
-	if (str[i - 1] != ' ')
-	{
-		p[j] = malloc(sizeof(char) * (k + 1));
-		if (p[j] == NULL)
-		{
-			free_g(p, j);
-			return (0);
-		}
-	}
 	return (1);
 }
 
@@ -124,8 +115,6 @@ char **strtow(char *str)
 			k = 0;
 		}
 	}
-	if (str[i - 1] != ' ')
-		j++;
 	p[j] = NULL;
 	return (p);
 }
