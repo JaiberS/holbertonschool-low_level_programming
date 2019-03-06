@@ -8,13 +8,10 @@
  */
 void free_grid(int **grid, int height)
 {
-	int i = 0, *currentgrid;
+	int i = 0;
 
 	for (; i < height; i++)
-	{
-		currentgrid = grid[i];
-		free(currentgrid);
-	}
+		free(grid[i]);
 	free(grid);
 }
 
@@ -35,11 +32,13 @@ int **alloc_grid(int width, int height)
 	if (p == NULL)
 		return (0);
 	for (; i < height; i++)
-		p[i] = malloc(sizeof(int) * width);
-	if (p == NULL)
 	{
-		free_grid(p, height);
-		return (0);
+		p[i] = malloc(sizeof(int) * width);
+		if (p[i] == NULL)
+		{
+			free_grid(p, i);
+			return (0);
+		}
 	}
 	return (p);
 }
