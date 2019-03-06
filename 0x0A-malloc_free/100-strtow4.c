@@ -1,13 +1,13 @@
 #include "holberton.h"
 
 /**
- * countwords - count the amount of words
- * @str: the strings to count the words
  *
- * Return: the number of words
+ *
+ *
+ *
  */
 
-int countwords(char *str)
+int countwords (char *str)
 {
 	int i = 0, m0 = 1, m1  = 0, k = 0;
 
@@ -29,18 +29,18 @@ int countwords(char *str)
 }
 
 /**
- * sizecolumns - add the size to the columns
- * @str: principal string
- * @p: string to be added the size
+ *
+ *
+ *
+ *
  *
  */
 
 void sizecolumns(char *str, char **p)
 {
 	int i, k, j, m1 = 0;
-
 	for (i = 0, k = 0, j = 0; str[i] != '\0'; i++)
-	{
+        {
 		if (str[i] != ' ')
 		{
 			m1 = 1;
@@ -49,15 +49,15 @@ void sizecolumns(char *str, char **p)
 		if (str[i] == ' ' && m1 == 1)
 		{
 			p[j] = malloc(sizeof(char) * (k + 1));
-			if (p == NULL)
-			{
+                        if (p == NULL)
+                        {
 /*                                return (0);*/
-			}
-			m1 = 0;
-			j++;
-			k = 0;
-		}
-	}
+                        }
+                        m1 = 0;
+                        j++;
+                        k = 0;
+                }
+        }
 }
 
 /**
@@ -76,25 +76,25 @@ char **strtow(char *str)
 		return (0);
 	k = countwords(str);
 	p = malloc(sizeof(char *) * 3);
-	if (p == NULL)
-		return (0);
+        if (p == NULL)
+                return (0);
 	sizecolumns(str, p);
 	for (i = 0, k = 0, j = 0, m1 = 0; str[i] != '\0'; i++)
-	{
-		if (str[i] != ' ')
-		{
-			m1 = 1;
-			p[j][k] = str[i];
-			k++;
-		}
-		if (str[i] == ' ' && m1 == 1)
-		{
+        {
+                if (str[i] != ' ')
+                {
+                        m1 = 1;
+                        p[j][k] = str[i];
+                        k++;
+                }
+                if (str[i] == ' ' && m1 == 1)
+                {
 			m1 = 0;
-			p[j][k] = '\0';
-			j++;
-			k = 0;
-		}
-	}
+                        p[j][k] = '\0';
+                        j++;
+                        k = 0;
+                }
+        }
 	p[j] = NULL;
-	return (p);
+	return(p);
 }
