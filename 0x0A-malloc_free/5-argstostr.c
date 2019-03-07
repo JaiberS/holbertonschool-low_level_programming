@@ -19,6 +19,7 @@ char *argstostr(int ac, char **av)
 		for (j = 0; av[i][j] != '\0'; j++, k++)
 			;
 	}
+	printf("%i",k);
 	p = malloc(sizeof(char) * (k + 1));
 	if (p == NULL)
 		return (0);
