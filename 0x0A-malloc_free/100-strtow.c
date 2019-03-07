@@ -101,7 +101,7 @@ char **strtow(char *str)
 
 	if (str == NULL || str[i] == '\0')
 		return (0);
-	if (str[i + 1] == '\0' && str[i] == ' ')
+	if (str[1] == '\0' && str[0] == ' ')
 		return (0);
 	k = countwords(str);
 	p = malloc(sizeof(char *) * (k + 1));
