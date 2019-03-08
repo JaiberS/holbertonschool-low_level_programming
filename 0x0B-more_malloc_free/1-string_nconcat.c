@@ -21,6 +21,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		;
 	for (; s2[j] != '\0'; j++)
 		;
+	printf("%i", i+ 1 +j);
+	printf("%i", i+ 1 +n);
 	if (n >= (j - 1))
 		p = malloc(sizeof(char) * (i + 1 + j));
 	else

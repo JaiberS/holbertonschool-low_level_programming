@@ -99,7 +99,7 @@ char **strtow(char *str)
 	char **p;
 	int i = 0, m1 = 0, k = 0, j = 0, checkr = 0;
 
-	if (str == NULL || str[i] == '\0')
+	if (str == NULL || str[0] == '\0')
 		return (0);
 	if (str[1] == '\0' && str[0] == ' ')
 		return (0);
