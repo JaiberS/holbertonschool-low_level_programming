@@ -3,7 +3,7 @@
 
 /**
  * print_dog - prints a struct dog
- * @d:
+ * @d: structure address
  *
  */
 void print_dog(struct dog *d)
