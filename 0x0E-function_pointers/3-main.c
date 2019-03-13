@@ -10,14 +10,14 @@
  */
 int main(int argc, char *argv[])
 {
+	op_t operate;
+	int result;
+
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit (98);
 	}
-	op_t operate;
-	int result;
-
 	operate.op = argv[2];
 	operate.f = get_op_func(operate.op);
 	if ( operate.f == NULL)
