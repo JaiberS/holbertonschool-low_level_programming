@@ -18,5 +18,5 @@ int int_index(int *array, int size, int (*cmp)(int))
 		if (j != 0)
 			break;
 	}
-	return (i);
+	return (-1);
 }
