@@ -18,9 +18,10 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
+/*	if (argv[2][1] == '\0')*/
 	operate.op = argv[2];
 	operate.f = get_op_func(operate.op);
-	if (operate.f == NULL)
+	if (operate.f == NULL || argv[2][1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
