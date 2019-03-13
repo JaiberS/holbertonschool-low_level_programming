@@ -1,11 +1,31 @@
 #include "function_pointers.h"
+#include "3-calc.h"
 
 /**
- * op_add -
+ * main - operates two numbers
+ * @argc: Counter of inputs
+ * @argv: inputs in string
  *
- * Return: 
+ * Return: result of the operation
  */
-int op_add(int a, int b)
+int main(int argc, char *argv[])
 {
+	if (argc != 4)
+	{
+		printf("Error\n");
+		exit (98);
+	}
+	op_t operate;
+	int result;
 
+	operate.op = argv[2];
+	operate.f = get_op_func(operate.op);
+	if ( operate.f == NULL)
+	{
+		printf("Error\n");
+		exit (100);
+	}
+	result = operate.f(atoi(argv[1]), atoi(argv[3]));
+	printf("%i\n", result);
+	return (0);
 }
