@@ -1,11 +1,23 @@
 #include "function_pointers.h"
 
 /**
- * op_sub -
+ * op_sub - prints the opcodes of its own main function.
+ * @argc: counter of inputs
+ * @argv: the inputs in string
  *
- * Return: 
+ * Return: 0
  */
-int op_sub(int a, int b)
+int main(int argc, char *argv[])
 {
-
+	if (argc != 2)
+	{
+		printf("Error\n");
+		exit(1);
+	}
+	if (atoi(argv[1]) < 0)
+	{
+		printf("Error\n");
+		exit(2);
+	}
+	return (0);
 }
