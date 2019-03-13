@@ -1,7 +1,7 @@
 #include "function_pointers.h"
 
 /**
- * op_sub - prints the opcodes of its own main function.
+ * main - prints the opcodes of its own main function.
  * @argc: counter of inputs
  * @argv: the inputs in string
  *
