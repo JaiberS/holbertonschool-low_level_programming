@@ -16,14 +16,14 @@ int main(int argc, char *argv[])
 	if (argc != 4)
 	{
 		printf("Error\n");
-		exit (98);
+		exit(98);
 	}
 	operate.op = argv[2];
 	operate.f = get_op_func(operate.op);
-	if ( operate.f == NULL)
+	if (operate.f == NULL)
 	{
 		printf("Error\n");
-		exit (100);
+		exit(99);
 	}
 	result = operate.f(atoi(argv[1]), atoi(argv[3]));
 	printf("%i\n", result);
