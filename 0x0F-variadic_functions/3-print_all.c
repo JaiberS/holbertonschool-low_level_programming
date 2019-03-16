@@ -28,9 +28,11 @@ void print_all(const char * const format, ...)
 		case 's':
 			p = va_arg(valist, char *);
 			if (p != NULL)
+			{
 				printf("%s", p);
-			else
-				printf("%p", p);
+			break;
+			}
+			printf("%p", p);
 			break;
 		default:
 			m0 = 1;
