@@ -8,45 +8,39 @@
 void print_all(const char * const format, ...)
 {
 	va_list valist;
-        unsigned int i = 0, m0 = 0;
+	unsigned int i = 0, m0 = 0;
+	char *p;
 
-        /* initialize valist for num number of arguments */
 	va_start(valist, format);
-        /* access all the arguments assigned to valist */
 	while (format[i] != '\0')
 	{
 		switch (format[i])
 		{
 		case 'c':
 			printf("%c", va_arg(valist, int));
-			m0 = 1;
 			break;
-
 		case 'i':
 			printf("%i", va_arg(valist, int));
-			m0 = 1;
 			break;
-
 		case 'f':
 			printf("%f", va_arg(valist, double));
-			m0 = 1;
 			break;
-
 		case 's':
-			printf("%s", va_arg(valist, char *));
+			p = va_arg(valist, char *);
+			if (p != NULL)
+				printf("%s", p);
+			else
+				printf("%p", p);
+			break;
+		default:
 			m0 = 1;
 			break;
-
-		default:
-			;
 		}
-		if (format[i + 1] != '\0' && m0 == 1)
-		{
+		if (format[i + 1] != '\0' && m0 == 0)
 			printf(", ");
-			m0 = 0;
-		}
+		m0 = 0;
 		i++;
 	}
 	printf("\n");
-        va_end(valist);
+	va_end(valist);
 }
