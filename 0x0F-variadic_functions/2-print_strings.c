@@ -10,17 +10,35 @@ void print_strings(const char *separator, const unsigned int n, ...)
 {
 	va_list valist;
 	unsigned int i;
+	char *p;
 
-	if (separator == NULL)
-		return;
-/* initialize valist for num number of arguments */
 	va_start(valist, n);
-/* access all the arguments assigned to valist */
-	for (i = 0; i < n - 1; i++)
+	if (separator != NULL)
 	{
-		printf("%s%s", va_arg(valist, char *), separator);
+		for (i = 0; i < n - 1; i++)
+		{
+			p =  va_arg(valist, char *);
+			if (p != NULL)
+				printf("%s%s", p, separator);
+			else
+				printf("%p", p);
+		}
 	}
-	printf("%s\n", va_arg(valist, char *));
-/* clean memory reserved for valist */
+	else
+	{
+		for (i = 0; i < n - 1; i++)
+		{
+			p =  va_arg(valist, char *);
+			if (p != NULL)
+				printf("%s", p);
+			else
+				printf("%p", p);
+		}
+	}
+	p =  va_arg(valist, char *);
+	if (p != NULL)
+		printf("%s\n", p);
+	else
+		printf("%p\n", p);
 	va_end(valist);
 }
