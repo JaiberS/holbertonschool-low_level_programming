@@ -1,31 +1,18 @@
-section .data
-	text db "Hello, world!",10,0
-
 section .text
-	global _start
+	global  main
 
-_start:
-	mov rax, text
-	call _print
+main:
+	push    rbp
+	mov     rbp,rsp
+	mov     rdx,len
+	mov     rcx,message
+	mov     rax,4
+	int     0x80
 
-	mov rax, 60
-	mov rdi, 0
-	syscall
-
-_print:
-	push rax
-	mov rbx, 0
-_printloop:
-	inc rax
-	inc rbx
-	mov cl, [rax]
-	cmp cl, 0
-	jne _printloop
-
-	mov rax, 1
-	mov rdi, 1
-	pop rsi
-	mov rdx, rbx
-	syscalll
-
+	pop     rbp
+	mov     rax,0
 	ret
+
+	section .data
+message:	db "Hello, Holberton",0xa
+len:	equ $ - message
