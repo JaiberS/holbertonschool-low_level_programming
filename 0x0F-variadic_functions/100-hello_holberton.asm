@@ -2,17 +2,13 @@ section .text
 	global  main
 
 main:
-	push    rbp
-	mov     rbp,rsp
-	mov     rdx,len
-	mov     rcx,message
-	mov     rax,4
-	int     0x80
+	mov eax,4
+	mov ebx, 1
+	mov ecx, message
+	mov edx,length
+	int 0x80
+end:
 
-	pop     rbp
-	mov     rax,0
-	ret
-
-	section .data
-message:	db "Hello, Holberton", 10, 0
-len:	equ $ - message
+section .data
+	message db "Hello, Holberton", 0xa
+	length equ $-message
