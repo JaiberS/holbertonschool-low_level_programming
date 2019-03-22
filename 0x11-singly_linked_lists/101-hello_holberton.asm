@@ -1,15 +1,16 @@
-section .text
+extern printf
+
+	section .text
 	global  main
 
 main:
 	push    rbp
-	mov     rbp,rsp
-	mov     rcx,message
-	mov     rax,4
-	int     0x80
-	mov eax, 1
-	pop     rbp
+	mov rdi,fmt
+	mov     rsi,message
+	call 	printf
+	pop rbp
 end:
 
 	section .data
-message:	db "Hello, Holberton",0 ,0xa
+message:	db "Hello, Holberton",0
+fmt:	 db "%s", 0xa
