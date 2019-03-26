@@ -15,12 +15,12 @@ listint_t *reverse_listint(listint_t **head)
 		return (NULL);
 	sgt = (*head)->next;
 	(*head)->next = NULL;
-	for(; sgt != NULL; )
+	for (; sgt != NULL; )
 	{
 		ant = sgt;
 		sgt = ant->next;
 		ant->next = *head;
 		*head = ant;
 	}
-	return (ant);
+	return (*head);
 }
