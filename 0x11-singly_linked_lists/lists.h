@@ -21,26 +21,6 @@ typedef struct list_s
 	struct list_s *next;
 } list_t;
 
-/*
- *list_t *primer = NULL;
- *list_t *ultimo = NULL;
- *
- *void agregar (list_t *nodo){
- *	nodo -> next = NULL;
- *
- *	if (primer == NULL)
- *	{
- *		primer = nodo;
- *		ultimo = nodo;
- *	}
- *	else
- *	{
- *		ultimo -> next = nodo;
- *		ultimo = nodo;
- *	}
- *	}
-*/
-
 
 int _putchar(char c);
 size_t print_list(const list_t *h);
