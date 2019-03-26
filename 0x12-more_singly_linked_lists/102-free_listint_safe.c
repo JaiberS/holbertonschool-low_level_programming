@@ -2,7 +2,7 @@
 
 /**
  * free_listint_safe - frees a listint_t linked list.
- * @head: the list
+ * @h: the list
  *
  * Return:  the size of the list that was freed
  */
