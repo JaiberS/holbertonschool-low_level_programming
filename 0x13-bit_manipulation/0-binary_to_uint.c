@@ -19,7 +19,7 @@ unsigned int binary_to_uint(const char *b)
 	{
 		if (b[j] != '0' && b[j] != '1')
 			return (0);
-		if( b[j] == '1')
+		if (b[j] == '1')
 		{
 			receiv = 2;
 			if (i == 0)
