@@ -8,6 +8,7 @@
 void print_binary(unsigned long int n)
 {
 	unsigned long int numbern = 0, number = 0, receiv = 1, i = 0, k = 0;
+
 	if (n == ULONG_MAX)
 	{
 		for (; i < 64; i++)
