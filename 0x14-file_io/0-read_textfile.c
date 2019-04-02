@@ -27,10 +27,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	fd = open(filename, O_RDONLY);
 
 	if (fd == -1)
-	{
-		printf("Failed to open and read the file.\n");
-		exit(1);
-	}
+		return (0);
 
 	cprinted = read(fd, buf, letters);
 	if (cprinted == -1)
