@@ -1,2 +1,2 @@
 output:
-	gcc -g -Wall -pedantic -Werror -Wextra 1-main.c 1-create_file.c -o b
+	gcc -g -Wall -pedantic -Werror -Wextra 2-main.c 2-append_text_to_file.c -o c
