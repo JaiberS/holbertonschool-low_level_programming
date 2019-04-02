@@ -19,20 +19,22 @@ int main(int argc, char *argv[])
 			exit(97);
 	fdf = open(argv[1], O_RDONLY);
 	if (fdf == -1)
-		dprintf(2, "Error: Can't read from %s\n", argv[1]),
+		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", argv[1]),
 			exit(98);
 	fdt = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fdt == -1)
-		dprintf(2, "Error: Can't write to %s\n", argv[2]),
+		dprintf(STDERR_FILENO,
+			"Error: Can't write to %s\n", argv[2]),
 			exit(99);
-	do {
-		confr = read(fdf, buf, 1024);
+	do {	confr = read(fdf, buf, 1024);
 		if (confr == -1)
-			dprintf(2, "Error: Can't read from file %s\n", argv[1]),
+			dprintf(STDERR_FILENO,
+				"Error: Can't read from file %s\n", argv[1]),
 				exit(98);
 		confw = write(fdt, buf, confr);
 		if (confw == -1)
-			dprintf(2, "Error: Can't write to %s\n", argv[2]),
+			dprintf(STDERR_FILENO,
+				"Error: Can't write to %s\n", argv[2]),
 				exit(99);
 	} while (confr != '\0');
 	confr = close(fdt);
@@ -40,9 +42,11 @@ int main(int argc, char *argv[])
 	if (confr == -1 || confw == -1)
 	{
 		if (confr == -1)
-			dprintf(2, "Error: Can't close fd %i\n", fdt);
+			dprintf(STDERR_FILENO,
+				"Error: Can't close fd %i\n", fdt);
 		if (confw == -1)
-			dprintf(2, "Error: Can't close fd %i\n", fdf);
+			dprintf(STDERR_FILENO,
+				"Error: Can't close fd %i\n", fdf);
 		exit(100);
 	}
 	return (0);
