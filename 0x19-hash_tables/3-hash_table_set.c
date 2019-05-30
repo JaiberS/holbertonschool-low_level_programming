@@ -10,14 +10,29 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int hash, size;
+	unsigned long int hash, size, m0 = 0;
 	hash_table_t *ht2;
 	hash_node_t *head;
 
 	ht2 = ht;
 	size = ht2->size;
 	hash = key_index((const unsigned char *)key, size);
-	head = add_node(&(ht2->array[hash]), key, value);
+	head = ht2->array[hash];
+	for (; head; head = head->next)
+	{
+		if (strcmp(head->key, key) == 0)
+		{
+			m0 = 1;
+			break;
+		}
+	}
+	if (m0 == 0)
+		head = add_node(&(ht2->array[hash]), key, value);
+	else
+	{
+		free(head->value);
+		head->value = strdup(value);
+	}
 	if (head == NULL)
 		return (0);
 	return (1);
