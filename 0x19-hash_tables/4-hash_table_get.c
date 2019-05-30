@@ -10,13 +10,9 @@
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned long int hash, size;
-	/* hash_table_t *ht2; */
 	hash_node_t *head;
 
-	/* ht2 = ht; */
-	/* for (size = 0; ht2->array[size] != NULL; size++) */
-	/* 	; */
-	size = 1024;
+	size = ht->size;
 	hash = key_index((const unsigned char *)key, size);
 	if (ht->array[hash] == NULL)
 		return (NULL);
