@@ -42,5 +42,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key);
 void hash_table_print(const hash_table_t *ht);
 void hash_table_delete(hash_table_t *ht);
 hash_node_t *add_node(hash_node_t **head, const char *key, const char *value);
+char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
+
 
 #endif /* HASH_TABLES_H */
