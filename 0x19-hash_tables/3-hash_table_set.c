@@ -15,9 +15,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *head;
 
 	ht2 = ht;
-	for (size = 0; ht2->array[size] != NULL; size++)
-		;
-	size = 1024;
+	size = ht2->size;
 	hash = key_index((const unsigned char *)key, size);
 	head = add_node(&(ht2->array[hash]), key, value);
 	if (head == NULL)
