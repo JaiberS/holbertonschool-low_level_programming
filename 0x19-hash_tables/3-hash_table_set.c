@@ -38,7 +38,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (head == NULL)
 		return (0);
 	return (1);
- }
+}
 
 /**
  * add_node - adds a new node at the beginning of a list_t list.
