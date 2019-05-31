@@ -90,5 +90,7 @@ void shash_table_print_rev(const shash_table_t *ht);
 void shash_table_delete(shash_table_t *ht);
 shash_node_t *add_snode(shash_node_t **head, shash_node_t **shead,
 			shash_table_t *ht, const char *key, const char *value);
+void add_hsnode(shash_node_t *iter, shash_node_t **shead, const char *key,
+		shash_node_t *siguiente, int i, shash_table_t *ht);
 
 #endif /* HASH_TABLES_H */
