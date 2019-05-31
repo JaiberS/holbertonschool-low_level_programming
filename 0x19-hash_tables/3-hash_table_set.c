@@ -14,6 +14,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_table_t *ht2;
 	hash_node_t *head;
 
+	if (strcmp(key, "") == 0 || value == NULL || key == NULL)
+		return (0);
 	ht2 = ht;
 	size = ht2->size;
 	hash = key_index((const unsigned char *)key, size);
