@@ -71,6 +71,8 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
  * @head: address of the struct
  * @key: key to be added
  * @value: value to be added
+ * @shead: sorted list head
+ * @ht: Hash table
  *
  * Return: the address of the new element, or NULL if it failed
  */
@@ -78,7 +80,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 shash_node_t *add_snode(shash_node_t **head, shash_node_t **shead,
 			shash_table_t *ht, const char *key, const char *value)
 {
-	shash_node_t *siguiente, *iter;
+	shash_node_t *siguiente, *iter = NULL;
 	int i = 0;
 
 	siguiente = malloc(sizeof(shash_node_t));
@@ -96,41 +98,59 @@ shash_node_t *add_snode(shash_node_t **head, shash_node_t **shead,
 		ht->stail = siguiente;
 	}
 	else
+		add_hsnode(iter, shead, key, siguiente, i, ht);
+	return (*head);
+}
+
+
+
+/**
+ * add_hsnode - adds a new node on a sorted list.
+ * @shead: address of the struct
+ * @key: key to be added
+ * @iter: current node
+ * @siguiente: node to be added
+ * @i: iterator on the word
+ * @ht: hash table
+ *
+ * Return: the address of the new element, or NULL if it failed
+ */
+
+void add_hsnode(shash_node_t *iter, shash_node_t **shead, const char *key,
+		shash_node_t *siguiente, int i, shash_table_t *ht)
+{
+	for (i = 0, iter = *shead; iter != NULL; i++)
 	{
-		for (i = 0, iter = *shead; iter != NULL; i++)
+		if (key[i] == '\0' && iter->key[i] == '\0')
+			break;
+		if (key[i] == (iter->key)[i])
+			continue;
+		if (key[i] > (iter->key)[i] && iter->snext != NULL)
 		{
-			if (key[i] == '\0' && iter->key[i] == '\0')
-				break;
-			if (key[i] == (iter->key)[i])
-				continue;
-			if (key[i] > (iter->key)[i] && iter->snext != NULL)
-			{
-				i = -1;
-				iter = iter->snext;
-				continue;
-			}
-			if (key[i] < (iter->key)[i])
-			{
-				siguiente->snext = iter;
-				siguiente->sprev = iter->sprev;
+			i = -1;
+			iter = iter->snext;
+			continue;
+		}
+		if (key[i] < (iter->key)[i])
+		{
+			siguiente->snext = iter;
+			siguiente->sprev = iter->sprev;
 				iter->sprev = siguiente;
 				if (siguiente->sprev != NULL)
 					siguiente->sprev->snext = siguiente;
 				if (siguiente->sprev == NULL)
 					ht->shead = siguiente;
 				break;
-			}
-			if (iter->snext == NULL)
-			{
-				siguiente->snext = NULL;
+		}
+		if (iter->snext == NULL)
+		{
+			siguiente->snext = NULL;
 				siguiente->sprev = iter;
 				iter->snext = siguiente;
 				ht->stail = siguiente;
 				break;
-			}
 		}
 	}
-	return (*head);
 }
 
 
