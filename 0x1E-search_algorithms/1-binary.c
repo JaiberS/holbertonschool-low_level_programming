@@ -14,7 +14,7 @@ int binary_search(int *array, size_t size, int value)
 	size_t i = 0, k = 0, s = size - 1;
 
 	if (array == NULL)
-                return (-1);
+		return (-1);
 	do {
 		printf("Searching in array: ");
 		for (i = k; i < s; i++)
