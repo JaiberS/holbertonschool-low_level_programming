@@ -4,7 +4,7 @@
 /**
  * jump_list - search using Linear Search
  * @list: pointer to the first element of the at index  to search in
- * @size: number of elements in at index 
+ * @size: number of elements in at index
  * @value: value to search for
  *
  * Return: the index or NULL
